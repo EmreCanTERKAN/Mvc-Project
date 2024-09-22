@@ -1,9 +1,9 @@
 MVC Projesi
 MVC PROJESİ : Kütüphane Yönetim Sistemi
 
-Proje Tanımı: Bir ASP.NET Core MVC uygulaması geliştirin. Bu uygulama, bir kütüphanenin kitap, yazar işlemlerini yönetmek için kapsamlı bir sistem olacaktır. Projede birden fazla model ve sayfa içerecektir.
+Proje Tanımı:Bu uygulama, bir kütüphanenin kitap, yazar işlemlerini yönetmek için kapsamlı bir sistem olacaktır. Projede birden fazla model ve sayfa içerecektir.
 
-Projeyi kodlarken OOP (Nesne Yönelimli Programlama) prensiplerini kullanmayı unutmayınız!
+Projeyi kodlarken OOP (Nesne Yönelimli Programlama) prensiplerini kullanıldı.
 Proje Gereksinimleri:
 
     Model Oluşturma:
