@@ -1,0 +1,22 @@
+﻿@model BookDetailViewModel
+
+
+<h3>Kitap Detayı</h3>
+
+
+<p><strong>Kitap İd</strong> @Model.Id</p>
+<p><strong>Başlık:</strong> @Model.Title</p>
+<p><strong>Türü:</strong> @Model.Genre</p>
+<p><strong>ISBN</strong> @Model.ISBN</p>
+<p><strong>Mevcut Kopya</strong> @Model.CopiesAvailable</p>
+@* burada tarih görüntüsü olarak sadece day mounth year formatında görüntülenecektir *@
+<p><strong>Yayın Tarihi</strong> @Model.PublishDate.ToString("dd/MM/yyyy")</p>
+
+<a asp-action="List" asp-controller="Book" class="btn btn-primary">Geri Dön</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" asp-controller="Book" class="btn btn-primary">Düzenle</a>
+
+
+
+
+
+

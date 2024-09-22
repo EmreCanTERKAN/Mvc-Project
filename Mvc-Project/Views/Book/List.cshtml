@@ -1,0 +1,47 @@
+﻿@model List<BookListViewModel>
+
+
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+    <h2>Kitap Listesi</h2>
+
+
+    <a asp-action="Add" asp-controller="Book" class="btn btn-success mt-2 mb-2">Yeni Ekle</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Kitap Adı</th>
+                <th>Türü</th>
+                <th>Yazarı</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.Genre</td>
+                    <td>@book.AuthorFullName</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@book.Id" class="btn btn-info">Detaylar</a>
+                        <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning">Düzenle</a>
+                        <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-danger text-center">
+        <h5 class="fw-bold">Kitaplar kısmını görebilmeniz için oturum açmanız gerekmektedir.</h5>
+        <a class="btn btn-danger fw-bold" asp-controller="Auth" asp-action="SignIn">Oturum Aç</a>
+    </div>
+}
+
+
+

@@ -1,0 +1,38 @@
+﻿@model AuthorEditViewModel
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+
+    <h3 class="text-secondary fw-bolder">Yazar Düzenleme Sayfası</h3>
+    <input asp-for="Id" type="hidden" />
+    <form asp-action="Edit" asp-controller="Author" method="post">
+        <div class="mb-2">
+            <label class="form-label fw-bolder">Adı</label>
+            <input asp-for="FirstName" class="form-control" type="text" />
+            <span asp-validation-for="FirstName" class="text-danger fw-bold"></span>
+        </div>
+        <div class="mb-2">
+            <label class="form-label fw-bolder">Soyadı</label>
+            <input asp-for="LastName" class="form-control" type="text" />
+            <span asp-validation-for="LastName" class="text-danger fw-bold"></span>
+        </div>
+        <div class="mb-2">
+            <label class="form-label fw-bolder">Doğum Tarihi</label>
+            <input asp-for="DateOfBirth" class="form-control" type="date" />
+            <span asp-validation-for="DateOfBirth" class="text-danger fw-bold"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Düzenle</button>
+    </form>
+}
+else
+{
+
+    <div class="alert alert-danger">
+        <h5 class="text-center fw-bold">Yazarlar kısmını görebilmeniz için giriş yapmanız gerekmektedir.</h5>
+    </div>
+
+}
+
+
+
+
+

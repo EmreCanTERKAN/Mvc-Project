@@ -1,0 +1,26 @@
+﻿<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Kütüphane Kayıt Sistemi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="List" asp-controller="Book">Kitaplar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="List" asp-controller="Author">Yazarlar</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <!-- Flex container ekleyelim -->
+                <a class="btn btn-success fw-bold me-2" asp-action="SignUp" asp-controller="Auth">Kayıt Ol</a>
+                <a class="btn btn-success fw-bold" asp-action="SignIn" asp-controller="Auth">Oturum Aç</a>
+            </div>
+        </div>
+    </div>
+</nav>

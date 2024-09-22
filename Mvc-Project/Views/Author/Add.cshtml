@@ -1,0 +1,36 @@
+﻿@model AuthorAddViewModel
+
+
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+    <h3 class="text-secondary fw-bolder">Yazar Ekleme Sayfası</h3>
+    <form asp-action="Add" asp-controller="Author" method="post">
+        <div class="mb-2">
+            <label class="form-label fw-bolder">Adı</label>
+            <input asp-for="FirstName" class="form-control" type="text" />
+            <span asp-validation-for="FirstName" class="text-danger fw-bold"></span>
+        </div>
+        <div class="mb-2">
+            <label class="form-label fw-bolder">Soyadı</label>
+            <input asp-for="LastName" class="form-control" type="text" />
+            <span asp-validation-for="LastName" class="text-danger fw-bold"></span>
+        </div>
+        <div class="mb-2">
+            <label class="form-label fw-bolder">Doğum Tarihi</label>
+            <input asp-for="DateOfBirth" class="form-control" type="datetime" />
+            <span asp-validation-for="DateOfBirth" class="text-danger fw-bold"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+    
+}
+@{
+    else
+    {
+        <div class="alert alert-danger">
+            <h5 class="text-center fw-bold">Yazarlar kısmını görebilmeniz için giriş yapmanız gerekmektedir.</h5>
+        </div>
+    }
+}
+
+
